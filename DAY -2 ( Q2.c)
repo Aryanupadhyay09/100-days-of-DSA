@@ -1,0 +1,18 @@
+// Function to find maximum profit
+int maxProfit(int prices[], int n) {
+    int min_price = prices[0];  // Minimum price seen so far
+    int max_profit = 0;        // Maximum profit so far
+
+    for (int i = 1; i < n; i++) {
+        // Update minimum price
+        if (prices[i] < min_price) {
+            min_price = prices[i];
+        }
+        // Check profit if selling today
+        else if (prices[i] - min_price > max_profit) {
+            max_profit = prices[i] - min_price;
+        }
+    }
+
+    return max_profit;
+}
