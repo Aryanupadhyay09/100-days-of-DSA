@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+    // Step 1: Read size of array
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Step 2: Read n sorted integers
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Step 3: Print unique elements
+    // Always print the first element
+    printf("%d", arr[0]);
+
+    // Step 4: Traverse array and skip duplicates
+    for (i = 1; i < n; i++) {
+        if (arr[i] != arr[i - 1]) {
+            // Print only when current element is different from previous
+            printf(" %d", arr[i]);
+        }
+    }
+
+    printf("\n"); // End with newline
+    return 0;
+}
